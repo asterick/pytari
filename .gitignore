@@ -1,4 +1,6 @@
 *.py[cod]
+roms
+.DS_Store
 
 # C extensions
 *.so

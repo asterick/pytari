@@ -284,9 +284,11 @@ def runtime():
     static = pygame.Surface((160,264),SWSURFACE, 8)
     channel = pygame.image.load('pytari.channel.png')
 
-    palette = numpy.zeros((256,3)).astype('b')
+    palette = numpy.zeros((256,4)).astype('B')
     for x in range(len(palette)):
-        palette[x] = x
+        palette[x][0:3] = x
+        palette[x][3] = 0xFF
+
     static.set_palette(palette)
 
     while 1:        
