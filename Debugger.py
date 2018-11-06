@@ -101,9 +101,11 @@ class RamViewer:
     def Update( self ):
         for RamSet in self.RAM:
             old, new, lableSet = RamSet
-            for index in numpy.nonzero(old ^ new):
+
+            for index in range(len(new)):
+                if new[index] != old[index]:
+                    lableSet[index].set('%02X' % (new[index]))
                 old[index] = new[index]
-                lableSet[index].set('%02X' % (new[index]))
 
 class Disassembler:
     def __init__( self, gui, atari, font ):

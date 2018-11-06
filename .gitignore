@@ -1,6 +1,7 @@
 *.py[cod]
 roms
 .DS_Store
+pytari.config
 
 # C extensions
 *.so
